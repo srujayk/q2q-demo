@@ -18,7 +18,9 @@ before_script:
 
 script:
   - "bundle exec cucumber"
+  - ./cc-test-reporter format-coverage --output coverage/codeclimate.$SUITE.json
   - "bundle exec rspec"
+  - ./cc-test-reporter format-coverage --output coverage/codeclimate.$SUITE.json
 
 cache:
   bundler: true
@@ -26,9 +28,8 @@ cache:
 env:
   global:
     - CC_TEST_REPORTER_ID=bacc472975785fa4e06533d119b21e83b7c78388d3dc3a40ca8a702f4dc0823a
-    - CI_NODE_TOTAL=5
 
 # Pipe the coverage data to Code Climate
 after_script:
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter format-coverage -t simplecov -o ./coverage/codeclimate.$CI_NODE_INDEX.json ./coverage/spec/.resultset.json; fi
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter sum-coverage --output - --parts $CI_NODE_TOTAL coverage/codeclimate.*.json | ./cc-test-reporter upload-coverage --input -; fi
+  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json | ./cc-test-reporter upload-coverage
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
