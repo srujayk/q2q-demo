@@ -25,7 +25,7 @@ cache:
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=id
+    - CC_TEST_REPORTER_ID=bacc472975785fa4e06533d119b21e83b7c78388d3dc3a40ca8a702f4dc0823a
     - CI_NODE_TOTAL=5
 
 # Pipe the coverage data to Code Climate
