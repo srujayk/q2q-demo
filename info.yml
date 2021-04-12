@@ -1,0 +1,29 @@
+project:
+  name: 'Q2Q Demo Project'
+  owner: 'cs169'
+  teamId: '101'
+  notifications:
+    slack:
+      url: 'https://hooks.slack.com/services/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'
+  identities:
+    pivotal:
+      url: 'https://www.pivotaltracker.com/n/projects/2487419'
+    heroku:
+      url: 'https://goldenflow-showcase-project.herokuapp.com/'
+    travis:
+      url: 'https://travis-ci.org/saasbook/q2q-demo'
+    codeclimate:
+      url: 'https://codeclimate.com/github/saasbook/q2q-demo'
+  members:
+    member1:
+      name: 'Srujay'
+      surname: 'Korlakunta'
+      githubUsername: 'srujayk'
+      pivotalUsername: 'srujayk'
+      herokuEmail: 'srujay@berkeley.edu'
+    member2:
+      name: 'Karthik'
+      surname: 'Sreedhar'
+      githubUsername: 'karthiksreedhar'
+      pivotalUsername: 'srujayk'
+      herokuEmail: 'karthiksreedhar@berkeley.edu'
